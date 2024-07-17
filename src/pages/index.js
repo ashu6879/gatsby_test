@@ -2,11 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  query MyQuery {
+  query {
     allMongodbAlphaDatabaseWpUsers {
       nodes {
-        display_name
         id
+        display_name
         user_email
         user_login
       }
