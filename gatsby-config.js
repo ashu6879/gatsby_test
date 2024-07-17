@@ -39,5 +39,17 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString: 'mongodb+srv://alphauser:alphauserpw@alphauniverse.vbhyo7i.mongodb.net/?retryWrites=true&w=majority&appName=Alphauniverse',
+        dbName: 'alpha_database',
+        collection: 'wp_users',
+        extraParams: {
+          ssl: true,
+          authSource: 'admin',
+        },
+      },
+    },
   ],
 }
