@@ -97,7 +97,7 @@ const IndexPage = () => (
       </p>
     </div>
     <ul className={styles.list}>
-      {links.map(link => (
+      {links.map((link) => (
         <li key={link.url} className={styles.listItem}>
           <a
             className={styles.listItemLink}
@@ -115,6 +115,32 @@ const IndexPage = () => (
         {i !== moreLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))}
+    
+    {/* Form Section */}
+    <div className={styles.formContainer}>
+      <h2>Contact Us</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    </div>
   </Layout>
 )
 
