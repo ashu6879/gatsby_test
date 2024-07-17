@@ -2,16 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  query {
-    allMongodbAlphaDatabaseWpUsers {
-      nodes {
-        id
-        display_name
-        user_email
-        user_login
-      }
+query MyQuery {
+  allMongodbAlphaDatabaseWpUsers {
+    nodes {
+      display_name
+      user_email
+      user_login
     }
   }
+}
 `
 
 const UsersPage = ({ data }) => {
