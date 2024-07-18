@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -18,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString: 'mongodb+srv://alphauser:alphauserpw@alphauniverse.vbhyo7i.mongodb.net/?retryWrites=true&w=majority&appName=Alphauniverse',
+        connectionString: process.env.MONGODB_CONNECTION_STRING,
         dbName: 'alpha_database',
         collection: 'wp_users',
         extraParams: {

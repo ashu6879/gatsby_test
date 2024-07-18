@@ -2,15 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export const query = graphql`
-query MyQuery {
-  allMongodbAlphaDatabaseWpUsers {
-    nodes {
-      display_name
-      user_email
-      user_login
+  query MyQuery {
+    allMongodbAlphaDatabaseWpUsers {
+      nodes {
+        id
+        display_name
+        user_email
+        user_login
+      }
     }
   }
-}
 `
 
 const UsersPage = ({ data }) => {
@@ -18,15 +19,20 @@ const UsersPage = ({ data }) => {
   return (
     <div>
       <h1>Users</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>
-            <p>Name: {user.display_name}</p>
-            <p>Email: {user.user_email}</p>
-            <p>Login : {user.user_login}</p>
-          </li>
-        ))}
-      </ul>
+      {users.length > 0 ? (
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>
+              <p>Name: {user.display_name}</p>
+              <p>Email: {user.user_email}</p>
+              <p>Login: {user.user_login}</p>
+              <p>ID: {user.id}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No users found</p>
+      )}
     </div>
   )
 }
