@@ -25,7 +25,7 @@ const UsersPage = ({ data }) => {
             <li key={user.id}>
               <p>Name: {user.display_name}</p>
               <p>Email: {user.user_email}</p>
-              <p>Login: {user.user_login}</p>
+              <p>Login= {user.user_login}</p>
               <p>ID: {user.id}</p>
             </li>
           ))}
