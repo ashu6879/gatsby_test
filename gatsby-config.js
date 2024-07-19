@@ -1,13 +1,7 @@
 require("dotenv").config();
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+console.log("MongoDB Connection String:", process.env.MONGODB_CONNECTION_STRING);
+
 module.exports = {
   siteMetadata: {
     title: "Alpha Universe",
@@ -20,8 +14,8 @@ module.exports = {
       resolve: `gatsby-source-mongodb`,
       options: {
         connectionString: process.env.MONGODB_CONNECTION_STRING,
-        dbName: 'alpha_database',
-        collection: 'wp_users',
+        dbName: process.env.DB_name,
+        collection: process.env.collection,
         extraParams: {
           ssl: true,
           authSource: 'admin',
@@ -29,4 +23,4 @@ module.exports = {
       },
     },
   ],
-}
+};
