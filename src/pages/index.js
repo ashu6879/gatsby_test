@@ -8,7 +8,7 @@ const UsersPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost/');
+        const response = await fetch('https://mongo-connection.vercel.app/');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
